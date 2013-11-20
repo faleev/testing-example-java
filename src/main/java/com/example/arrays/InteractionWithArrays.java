@@ -1,3 +1,5 @@
+package com.example.arrays;
+
 import java.util.ArrayList;
 
 public class InteractionWithArrays {
