@@ -2,9 +2,9 @@ package com.example.arrays;
 
 import java.util.ArrayList;
 
-public class InteractionWithArrays {
+public class BasicInteractionWithArrays {
 
-    public Double getMaxValueFromArray(ArrayList<Double> arrayList) {
+    public static Double getMaxValueFromArray(ArrayList<Double> arrayList) {
         Double max = arrayList.get(0);
         for (Double element : arrayList) {
             if (element > max) max = element;
@@ -12,7 +12,7 @@ public class InteractionWithArrays {
         return max;
     }
 
-    public Double getMeanValueFromArray (ArrayList<Double> arrayList) {
+    public static Double getMeanValueFromArray(ArrayList<Double> arrayList) {
         int N = arrayList.size();
         Double sum = 0.0;
         for (Double element : arrayList) {
@@ -21,7 +21,7 @@ public class InteractionWithArrays {
         return sum/N;
     }
 
-    public ArrayList<Double> copyOneArrayToAnother(ArrayList<Double> arrayList) {
+    public static ArrayList<Double> copyOneArrayToAnother(ArrayList<Double> arrayList) {
         ArrayList<Double> arrayListCopy = new ArrayList<>();
         for (Double element : arrayList) {
             arrayListCopy.add(element);
@@ -29,7 +29,7 @@ public class InteractionWithArrays {
         return arrayListCopy;
     }
 
-    public ArrayList<Double> getReverseOrderedArray(ArrayList<Double> arrayList) {
+    public static ArrayList<Double> getReverseOrderedArray(ArrayList<Double> arrayList) {
         int N = arrayList.size();
         for(int i=0; i<N/2; i++) {
             Double temp = arrayList.get(i);
