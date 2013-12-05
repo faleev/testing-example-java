@@ -17,7 +17,7 @@ public class WikipediaMainPageTest extends BasicTestCase {
         mainWikipage.openPage();
     }
 
-    @Test(groups = {"default"})
+    @Test
     public void testThatWikiIsOpened() throws Exception {
         String title = driver.getTitle();
         assertEquals(title, "Wikipedia, the free encyclopedia");
