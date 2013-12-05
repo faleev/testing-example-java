@@ -9,3 +9,8 @@
 # Maven
 log/
 target/
+
+# Selenium Drivers
+drivers/chromedriver*
+drivers/firefox*
+
