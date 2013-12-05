@@ -2,10 +2,17 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 <suite name="Selenium Test Cases" verbose="6" time-out="400000">
-        <test name="Wikipedia Tests">
-            <parameter name="browser" value="firefox"/>
-            <classes>
-                <class name="com.example.selenium.pages.wikipedia.WikipediaMainPageTest"/>
-            </classes>
-        </test>
+    <test name="Wikipedia Tests in Chrome">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="com.example.selenium.pages.wikipedia.WikipediaMainPageTest"/>
+        </classes>
+    </test>
+    <test name="Wikipedia Tests in Firefox">
+        <parameter name="browser" value="firefox"/>
+        <classes>
+            <class name="com.example.selenium.pages.wikipedia.WikipediaMainPageTest"/>
+        </classes>
+    </test>
+
 </suite>

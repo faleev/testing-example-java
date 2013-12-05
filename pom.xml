@@ -20,6 +20,9 @@
                             <useDefaultListeners>true</useDefaultListeners>
                             <verbose>5</verbose>
                         </systemPropertyVariables>
+                        <suiteXmlFiles>
+                            <suiteXmlFile>testng.xml</suiteXmlFile>
+                        </suiteXmlFiles>
                     </configuration>
                 </plugin>
             </plugins>
