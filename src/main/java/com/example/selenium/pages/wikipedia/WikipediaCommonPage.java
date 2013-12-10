@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.List;
+
 public abstract class WikipediaCommonPage extends Page {
 
     public WikipediaCommonPage(WebDriver driver) {
@@ -23,6 +25,9 @@ public abstract class WikipediaCommonPage extends Page {
     @FindBy(css = ".suggestions-results")
     private WebElement suggestionsResults;
 
+    @FindBy(css = ".suggestions-results a div")
+    private List<WebElement> suggestionsResultsValues;
+
     public WebElement getWikiLogo() {
         return wikiLogo;
     }
@@ -37,5 +42,9 @@ public abstract class WikipediaCommonPage extends Page {
 
     public WebElement getSuggestionsResults() {
         return suggestionsResults;
+    }
+
+    public List<WebElement> getSuggestionsResultsValues() {
+        return suggestionsResultsValues;
     }
 }
