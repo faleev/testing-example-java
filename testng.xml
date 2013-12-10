@@ -6,14 +6,14 @@
         <parameter name="browser" value="chrome"/>
         <classes>
             <class name="com.example.selenium.pages.wikipedia.WikipediaMainPageTest"/>
-            <class name="com.example.selenium.pages.wikipedia.WikipediaArticlePageTest"/>
+            <class name="com.example.selenium.pages.wikipedia.WikipediaSearchTest"/>
         </classes>
     </test>
     <test name="Wikipedia Tests in Firefox">
         <parameter name="browser" value="firefox"/>
         <classes>
             <class name="com.example.selenium.pages.wikipedia.WikipediaMainPageTest"/>
-            <class name="com.example.selenium.pages.wikipedia.WikipediaArticlePageTest"/>
+            <class name="com.example.selenium.pages.wikipedia.WikipediaSearchTest"/>
         </classes>
     </test>
 
