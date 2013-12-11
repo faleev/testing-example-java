@@ -1,5 +1,6 @@
 package com.example.selenium;
 
+import com.example.utils.ProjectConfiguration;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -17,7 +18,7 @@ public class BasicTestCase {
     }
 
     private void startChromeDriver() {
-        System.setProperty("webdriver.chrome.driver", "drivers/chromedriver");
+        System.setProperty("webdriver.chrome.driver", ProjectConfiguration.getProperty("chromedriver.path"));
         driver = new ChromeDriver();
     }
 
