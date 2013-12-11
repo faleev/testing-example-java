@@ -3,14 +3,14 @@
 
 <suite name="Selenium Test Cases" verbose="6" time-out="400000">
     <test name="Wikipedia Tests in Chrome">
-        <parameter name="browser" value="chrome"/>
+        <parameter name="environment" value="chrome-local"/>
         <classes>
             <class name="com.example.selenium.pages.wikipedia.WikipediaMainPageTest"/>
             <class name="com.example.selenium.pages.wikipedia.WikipediaSearchTest"/>
         </classes>
     </test>
     <test name="Wikipedia Tests in Firefox">
-        <parameter name="browser" value="firefox"/>
+        <parameter name="environment" value="firefox-local"/>
         <classes>
             <class name="com.example.selenium.pages.wikipedia.WikipediaMainPageTest"/>
             <class name="com.example.selenium.pages.wikipedia.WikipediaSearchTest"/>

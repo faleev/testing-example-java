@@ -23,14 +23,14 @@ public class BasicTestCase {
     }
 
     @BeforeClass
-    @Parameters({"browser"})
-    public void initializeWebDriver(@Optional("chrome") String browser) throws Exception {
-        switch (browser.toLowerCase()) {
-            case "firefox":
+    @Parameters({"environment"})
+    public void initializeWebDriver(@Optional("chrome-local") String environment) throws Exception {
+        switch (environment.toLowerCase()) {
+            case "firefox-local":
                 startFirefoxDriver();
                 break;
 
-            case "chrome":
+            case "chrome-local":
                 startChromeDriver();
                 break;
 
