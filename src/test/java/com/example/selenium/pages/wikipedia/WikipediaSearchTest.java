@@ -1,7 +1,9 @@
 package com.example.selenium.pages.wikipedia;
 
 import com.example.selenium.BasicTestCase;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
@@ -38,14 +40,24 @@ public class WikipediaSearchTest extends BasicTestCase{
 
         mainWikipage.waitForElement(mainWikipage.getSuggestionsResults());
 
+        int i = 0;
         for(WebElement e : mainWikipage.getSuggestionsResultsValues()) {
-            if (e.getAttribute("title").equals(header)) {
+            if (e.getText().equals(header)) {
                 e.click();
+                // In the Firefox browser click on the element in the suggestions list does not lead to the redirection
+                // of the target page, so additional click on the search button is used.
+                if (driver instanceof FirefoxDriver) {
+                    mainWikipage.getSearchButton().click();
+                }
                 break;
             }
+            // In case when article title not present in the suggestions list ('if' statement does not 'brake' the 'for'
+            // loop), exception will be raised.
+            i++;
+            if (i == mainWikipage.getSuggestionsResultsValues().size()) {
+                throw new AssertionError("Article title \"" + header + "\" was not found in the suggestions list.");
+            }
         }
-
-        assertNotEquals(driver.getCurrentUrl(), mainWikipage.getPageURL(), "Article not found in suggestions.");
 
         String articleHeader = articleWikipage.getArticleHeader().getText();
         assertEquals(articleHeader, header);
