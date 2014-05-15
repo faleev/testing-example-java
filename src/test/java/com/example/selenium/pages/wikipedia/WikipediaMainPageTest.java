@@ -1,7 +1,6 @@
 package com.example.selenium.pages.wikipedia;
 
 import com.example.selenium.BasicTestCase;
-import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -14,37 +13,37 @@ public class WikipediaMainPageTest extends BasicTestCase {
 
     @BeforeClass
     public void setUp() throws Exception {
-        mainWikipage = PageFactory.initElements(driver, WikipediaMainPage.class);
+        mainWikipage = new WikipediaMainPage(driver);
         mainWikipage.openPage();
     }
 
     @Test
     public void testThatWikiIsOpened() throws Exception {
-        String title = driver.getTitle();
+        String title = mainWikipage.getPageTitle();
         assertEquals(title, "Wikipedia, the free encyclopedia");
     }
 
     @Test
     public void testThatUrlIsCorrect() throws Exception {
-        String url = driver.getCurrentUrl();
+        String url = mainWikipage.getPageUrl();
         assertEquals(url, "http://en.wikipedia.org/wiki/Main_Page");
     }
 
     @Test
     public void testThatWikiLogoDisplayed() throws Exception {
-        boolean state = mainWikipage.getWikiLogo().isDisplayed();
+        boolean state = mainWikipage.isWikiLogoDisplayed();
         assertTrue(state);
     }
 
     @Test
     public void testThatWikiWelcomeMessageIsPresent() throws Exception {
-        String message = mainWikipage.getWelcomeMessage().getText();
+        String message = mainWikipage.getWelcomeMessageText();
         assertEquals(message, "Welcome to Wikipedia,");
     }
 
     @Test
     public void testThatTopBannerIsPresent() throws Exception {
-        boolean state = mainWikipage.getTopBanner().isDisplayed();
+        boolean state = mainWikipage.isTopBannerDisplayed();
         assertTrue(state);
     }
 }

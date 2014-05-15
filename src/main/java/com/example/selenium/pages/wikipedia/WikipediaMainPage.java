@@ -17,12 +17,12 @@ public class WikipediaMainPage extends WikipediaCommonPage {
     @FindBy(xpath = "//*[@id='mp-topbanner']/tbody/tr/td[1]/table/tbody/tr/td/div[1]")
     private WebElement welcomeMessage;
 
-    public WebElement getTopBanner() {
-        return topBanner;
+    public String getWelcomeMessageText() {
+        return welcomeMessage.getText();
     }
 
-    public WebElement getWelcomeMessage() {
-        return welcomeMessage;
+    public boolean isTopBannerDisplayed() {
+        return topBanner.isDisplayed();
     }
 
 }

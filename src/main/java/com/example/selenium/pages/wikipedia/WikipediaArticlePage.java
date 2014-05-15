@@ -1,11 +1,10 @@
 package com.example.selenium.pages.wikipedia;
 
-import com.example.selenium.pages.Page;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class WikipediaArticlePage extends Page {
+public class WikipediaArticlePage extends WikipediaCommonPage {
 
     public WikipediaArticlePage(WebDriver driver) {
         super(driver);
@@ -20,16 +19,16 @@ public class WikipediaArticlePage extends Page {
     @FindBy(xpath = ".//*[@id='mw-content-text']/p[1]")
     private WebElement articleFirstParagraph;
 
-    public WebElement getArticleHeader() {
-        return articleHeader;
+    public String getArticleHeader() {
+        return articleHeader.getText();
     }
 
-    public WebElement getArticleContents() {
-        return articleContents;
+    public String getArticleContents() {
+        return articleContents.getText();
     }
 
-    public WebElement getArticleFirstParagraph() {
-        return articleFirstParagraph;
+    public String getArticleFirstParagraph() {
+        return articleFirstParagraph.getText();
     }
 
 }
