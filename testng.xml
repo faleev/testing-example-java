@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Selenium Test Cases" verbose="6" time-out="400000">
+    <test name="Wikipedia Tests in Chrome">
+        <parameter name="environment" value="chrome-local"/>
+        <classes>
+            <class name="com.example.selenium.pages.wikipedia.WikipediaMainPageTest"/>
+            <class name="com.example.selenium.pages.wikipedia.WikipediaSearchTest"/>
+        </classes>
+    </test>
+    <test name="Wikipedia Tests in Firefox">
+        <parameter name="environment" value="firefox-local"/>
+        <classes>
+            <class name="com.example.selenium.pages.wikipedia.WikipediaMainPageTest"/>
+            <class name="com.example.selenium.pages.wikipedia.WikipediaSearchTest"/>
+        </classes>
+    </test>
+
+</suite>
