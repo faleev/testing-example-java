@@ -50,9 +50,10 @@ public abstract class WikipediaCommonPage extends Page {
                 e.click();
                 // In the Firefox browser, click on the element in the suggestions list does not lead to the redirection
                 // to the target page, so additional click on the search button is used.
-                if (driver instanceof FirefoxDriver) {
-                    searchButton.click();
-                }
+                //if (driver instanceof FirefoxDriver) {
+                //    searchButton.click();
+                //}
+                // This behaviour is no longer relevant (Selenium 2.42.2), but this piece of code decided to leave here.
                 return PageFactory.initElements(driver, WikipediaArticlePage.class);
             }
         }
