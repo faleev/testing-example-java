@@ -1,13 +1,13 @@
 package com.example.selenium.pages.wikipedia;
 
-import com.example.selenium.BasicTestCase;
+import com.example.selenium.common.BasicSeleniumTestCase;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-public class WikipediaSearchTest extends BasicTestCase{
+public class WikipediaSearchTest extends BasicSeleniumTestCase {
 
     @DataProvider
     public Object[][] searchTesting() {

@@ -1,13 +1,13 @@
 package com.example.selenium.pages.wikipedia;
 
-import com.example.selenium.BasicTestCase;
+import com.example.selenium.common.BasicSeleniumTestCase;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-public class WikipediaMainPageTest extends BasicTestCase {
+public class WikipediaMainPageTest extends BasicSeleniumTestCase {
 
     private WikipediaMainPage mainWikipage;
 

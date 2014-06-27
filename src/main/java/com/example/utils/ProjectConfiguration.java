@@ -10,7 +10,7 @@ public class ProjectConfiguration {
 
     static {
         properties = new Properties();
-        URL config = ClassLoader.getSystemResource("project.cfg");
+        URL config = ClassLoader.getSystemResource("project.properties");
         try {
             properties.load(config.openStream());
         } catch (IOException e) {

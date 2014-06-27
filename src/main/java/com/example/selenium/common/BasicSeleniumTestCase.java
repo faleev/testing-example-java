@@ -1,4 +1,4 @@
-package com.example.selenium;
+package com.example.selenium.common;
 
 import com.example.utils.ProjectConfiguration;
 import org.openqa.selenium.Platform;
@@ -7,19 +7,18 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Optional;
-import org.testng.annotations.Parameters;
+import org.testng.annotations.*;
 
 import java.net.URL;
 
-public class BasicTestCase {
+@Listeners({TakeScreenshotOnFailureListener.class})
+public class BasicSeleniumTestCase {
 
-    protected WebDriver driver;
+    protected static WebDriver driver;
 
     private void startFirefoxDriver() {
         driver = new FirefoxDriver();
+        driver.manage().window().maximize();
     }
 
     private void startChromeDriver() {

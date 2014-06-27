@@ -14,15 +14,27 @@
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>2.17</version>
                     <configuration>
-                        <skipTests>false</skipTests>
-                        <useFile>false</useFile>
                         <systemPropertyVariables>
-                            <useDefaultListeners>true</useDefaultListeners>
-                            <verbose>5</verbose>
+                            <org.uncommons.reportng.escape-output>false</org.uncommons.reportng.escape-output>
+                            <org.uncommons.reportng.title>Test Execution Results</org.uncommons.reportng.title>
                         </systemPropertyVariables>
+                        <skipTests>false</skipTests>
+                        <useFile>true</useFile>
                         <suiteXmlFiles>
                             <suiteXmlFile>testng.xml</suiteXmlFile>
                         </suiteXmlFiles>
+                        <properties>
+                            <property>
+                                <name>usedefaultlisteners</name>
+                                <value>false</value>
+                            </property>
+                            <property>
+                                <name>listener</name>
+                                <value>org.uncommons.reportng.HTMLReporter, org.uncommons.reportng.JUnitXMLReporter</value>
+                            </property>
+                        </properties>
+                        <workingDirectory>${project.basedir}</workingDirectory>
+                        <reportsDirectory>${project.basedir}/target/reports</reportsDirectory>
                     </configuration>
                 </plugin>
             </plugins>
@@ -121,6 +133,24 @@
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>2.42.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.uncommons</groupId>
+            <artifactId>reportng</artifactId>
+            <version>1.1.4</version>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.testng</groupId>
+                    <artifactId>testng</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.google.inject</groupId>
+            <artifactId>guice</artifactId>
+            <version>3.0</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 </project>
