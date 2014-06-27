@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Unittests" verbose="6" time-out="400000">
+    <test name="Basic Interaction With Arrays">
+        <classes>
+            <class name="com.example.arrays.BasicInteractionWithArraysTest"/>
+        </classes>
+    </test>
+</suite>

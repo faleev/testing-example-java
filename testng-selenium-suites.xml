@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<!--
+
 <suite name="Selenium Test Cases" verbose="6" time-out="400000">
     <test name="Wikipedia Tests in Chrome">
         <parameter name="environment" value="chrome-local"/>
@@ -16,16 +16,4 @@
             <class name="com.example.selenium.pages.wikipedia.WikipediaSearchTest"/>
         </classes>
     </test>
-    <test name="Basic Interaction With Arrays">
-        <classes>
-            <class name="com.example.arrays.BasicInteractionWithArraysTest"/>
-        </classes>
-    </test>
-</suite>
--->
-<suite name="All Suites">
-    <suite-files>
-        <suite-file path="testng-selenium-suites.xml"/>
-        <suite-file path="testng-unittests-suites.xml"/>
-    </suite-files>
 </suite>
