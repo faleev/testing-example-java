@@ -80,7 +80,6 @@
     </dependencies>
 
     <build>
-        <pluginManagement>
             <plugins>
 
                 <plugin>
@@ -137,7 +136,29 @@
                     </configuration>
                 </plugin>
 
+                <plugin>
+                    <groupId>org.jvnet.jax-ws-commons</groupId>
+                    <artifactId>jaxws-maven-plugin</artifactId>
+                    <version>2.3</version>
+                    <executions>
+                        <execution>
+                            <id>weather</id>
+                            <goals>
+                                <goal>wsimport</goal>
+                            </goals>
+                            <configuration>
+                                <wsdlUrls>
+                                    <wsdlUrl>http://www.webservicex.com/globalweather.asmx?WSDL</wsdlUrl>
+                                </wsdlUrls>
+                                <sourceDestDir>${basedir}/target/generated-sources/src/</sourceDestDir>
+                                <extension>false</extension>
+                                <xnocompile>true</xnocompile>
+                                <encoding>UTF-8</encoding>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+
             </plugins>
-        </pluginManagement>
     </build>
 </project>
