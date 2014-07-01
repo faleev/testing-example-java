@@ -6,6 +6,9 @@
     <groupId>testing-example-java</groupId>
     <artifactId>testing-example-java</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <properties>
+        <testsuite>testng.xml</testsuite>
+    </properties>
     <build>
         <pluginManagement>
             <plugins>
@@ -21,7 +24,7 @@
                         <skipTests>false</skipTests>
                         <useFile>true</useFile>
                         <suiteXmlFiles>
-                            <suiteXmlFile>testng.xml</suiteXmlFile>
+                            <suiteXmlFile>${testsuite}</suiteXmlFile>
                         </suiteXmlFiles>
                         <properties>
                             <property>
