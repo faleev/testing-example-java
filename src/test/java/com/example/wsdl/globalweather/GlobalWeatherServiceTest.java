@@ -44,10 +44,10 @@ public class GlobalWeatherServiceTest {
         String response = endpoint.getCitiesByCountry(country);
 
         ArrayList<String> countries = getAllUniqueNodeValuesFromXML(response, "Country");
-        assertTrue(countries.contains(country));
+        assertTrue(searchForPatternInList(countries, country), "Response for countries does not contain country " + country + ".");
 
         ArrayList<String> cities = getAllUniqueNodeValuesFromXML(response, "City");
-        assertTrue(cities.toString().contains(city));
+        assertTrue(searchForPatternInList(cities, city), "Response for cities does not contain city " + city + ".");
     }
 
     @Test(dataProvider = "citiesByCountries")
@@ -84,6 +84,15 @@ public class GlobalWeatherServiceTest {
             e.printStackTrace();
         }
         return uniqueNodeValues;
+    }
+
+    private boolean searchForPatternInList(ArrayList<String> list, String pattern) {
+        for (String listItem : list) {
+            if (listItem.contains(pattern)) {
+                return true;
+            }
+        }
+        return false;
     }
 }
 
