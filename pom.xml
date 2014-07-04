@@ -156,6 +156,32 @@
                                 <encoding>UTF-8</encoding>
                             </configuration>
                         </execution>
+                        <execution>
+                            <id>nde-discovery</id>
+                            <goals>
+                                <goal>wsimport</goal>
+                            </goals>
+                            <configuration>
+                                <wsdlUrls>
+                                    <wsdlUrl>http://www.neighbourhood.statistics.gov.uk/NDE2/Disco?wsdl</wsdlUrl>
+                                </wsdlUrls>
+                                <packageName>uk.neighbourhood.statistics.discovery</packageName>
+                                <sourceDestDir>${basedir}/target/generated-sources/src/</sourceDestDir>
+                            </configuration>
+                        </execution>
+                        <execution>
+                            <id>nde-delivery</id>
+                            <goals>
+                                <goal>wsimport</goal>
+                            </goals>
+                            <configuration>
+                                <wsdlUrls>
+                                    <wsdlUrl>http://www.neighbourhood.statistics.gov.uk/NDE2/Deli?wsdl</wsdlUrl>
+                                </wsdlUrls>
+                                <packageName>uk.neighbourhood.statistics.delivery</packageName>
+                                <sourceDestDir>${basedir}/target/generated-sources/src/</sourceDestDir>
+                            </configuration>
+                        </execution>
                     </executions>
                 </plugin>
 
