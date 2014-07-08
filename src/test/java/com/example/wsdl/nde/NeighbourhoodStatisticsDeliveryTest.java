@@ -9,6 +9,8 @@ import java.util.List;
 
 import static org.testng.Assert.assertEquals;
 
+// http://neighbourhood.statistics.gov.uk/dissemination/LeadTableView.do?a=7&b=6275251&c=SO15+3JF&d=13&e=61&g=6401851&i=1001x1003x1032x1004&m=0&r=0&s=1404383141134&enc=1&dsFamilyId=2545
+@Test(groups = "delivery")
 public class NeighbourhoodStatisticsDeliveryTest {
 
     private static NeSSDelivery delivery;
@@ -18,7 +20,7 @@ public class NeighbourhoodStatisticsDeliveryTest {
         delivery = new Deli().getNeSSDeliveryBindingPort();
     }
 
-    @Test
+    @Test(dependsOnGroups = { "discovery" })
     public void testThatGetTableReturnsCorrectData() throws Exception {
         String datasetItemValueExpected = "236882";
         String datasetTitleExpected = "Age by Single Year, 2011 (QS103EW)";

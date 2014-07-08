@@ -7,4 +7,16 @@
             <class name="com.example.wsdl.globalweather.GlobalWeatherServiceTest"/>
         </classes>
     </test>
+    <test name="NDE Service Tests">
+        <groups>
+            <run>
+                <include name="discovery"/>
+                <include name="delivery"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.example.wsdl.nde.NeighbourhoodStatisticsDiscoveryTest"/>
+            <class name="com.example.wsdl.nde.NeighbourhoodStatisticsDeliveryTest"/>
+        </classes>
+    </test>
 </suite>
