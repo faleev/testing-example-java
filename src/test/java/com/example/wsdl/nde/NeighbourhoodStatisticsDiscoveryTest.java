@@ -11,7 +11,7 @@ import java.util.List;
 import static org.testng.Assert.assertEquals;
 
 // Details on http://neighbourhood.statistics.gov.uk/dissemination/
-public class NeighbourhoodStatisticsTest {
+public class NeighbourhoodStatisticsDiscoveryTest {
 
     private static NeSSDiscovery discovery;
 
