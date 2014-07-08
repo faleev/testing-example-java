@@ -16,7 +16,7 @@ public class WikipediaArticlePage extends WikipediaCommonPage {
     @FindBy(id = "toc")
     private WebElement articleContents;
 
-    @FindBy(xpath = ".//*[@id='mw-content-text']/p[1]")
+    @FindBy(xpath = ".//*[@id='mw-content-text']/p[*]")
     private WebElement articleFirstParagraph;
 
     public String getArticleHeader() {
