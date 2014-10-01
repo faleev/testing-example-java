@@ -1,8 +1,10 @@
 package com.example.selenium.pages;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -18,6 +20,10 @@ public abstract class Page {
 
     public void openPage() {
         driver.get(pageURL);
+    }
+
+    public void openPage(String url){
+        driver.get(url);
     }
 
     public String getPageTitle() {
@@ -36,5 +42,27 @@ public abstract class Page {
     public void waitForElement(WebElement element, int timeout) {
         WebDriverWait wait = new WebDriverWait(driver, timeout);
         wait.until(ExpectedConditions.visibilityOf(element));
+    }
+
+    public void waitForAjaxCompletion() {
+        WebDriverWait wait = new WebDriverWait(driver, 60);
+        final JavascriptExecutor executor = (JavascriptExecutor) driver;
+        ExpectedCondition<Boolean> ajaxCompletion = new ExpectedCondition<Boolean>(){
+            public Boolean apply(WebDriver driver){
+                return (Boolean) executor.executeScript("return jQuery.active == 0");
+            }
+        };
+        wait.until(ajaxCompletion);
+    }
+
+    public void waitForAjaxCompletion(int timeout) {
+        WebDriverWait wait = new WebDriverWait(driver, timeout);
+        final JavascriptExecutor executor = (JavascriptExecutor) driver;
+        ExpectedCondition<Boolean> ajaxCompletion = new ExpectedCondition<Boolean>(){
+            public Boolean apply(WebDriver driver){
+                return (Boolean) executor.executeScript("return jQuery.active == 0");
+            }
+        };
+        wait.until(ajaxCompletion);
     }
 }
