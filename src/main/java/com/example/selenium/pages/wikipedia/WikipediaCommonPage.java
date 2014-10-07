@@ -54,7 +54,7 @@ public abstract class WikipediaCommonPage extends Page {
                 //    searchButton.click();
                 //}
                 // This behaviour is no longer relevant (Selenium 2.42.2), but this piece of code decided to leave here.
-                return PageFactory.initElements(driver, WikipediaArticlePage.class);
+                return new WikipediaArticlePage(driver);
             }
         }
         throw new NoSuchElementException("Article title \"" + title + "\" was not found in the suggestions list.");
