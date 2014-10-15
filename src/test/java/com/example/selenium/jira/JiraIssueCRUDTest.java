@@ -1,9 +1,6 @@
 package com.example.selenium.jira;
 
 import com.example.selenium.common.BasicSeleniumTestCase;
-import com.example.selenium.pages.jira.CommonPage;
-import com.example.selenium.pages.jira.CreateIssueDialog;
-import com.example.selenium.pages.jira.IssuePage;
 import com.example.utils.ProjectConfiguration;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;

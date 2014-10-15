@@ -1,4 +1,4 @@
-package com.example.selenium.pages.jira;
+package com.example.selenium.jira;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

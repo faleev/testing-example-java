@@ -1,4 +1,4 @@
-package com.example.selenium.pages.wikipedia;
+package com.example.selenium.wikipedia;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

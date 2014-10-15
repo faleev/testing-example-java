@@ -1,4 +1,4 @@
-package com.example.selenium.pages.wikipedia;
+package com.example.selenium.wikipedia;
 
 import com.example.selenium.common.BasicSeleniumTestCase;
 import org.testng.annotations.DataProvider;
