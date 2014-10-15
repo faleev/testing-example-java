@@ -16,4 +16,16 @@
             <class name="com.example.selenium.pages.wikipedia.WikipediaSearchTest"/>
         </classes>
     </test>
+    <test name="Jira Basic CRUD Tests in Chrome)">
+        <parameter name="environment" value="chrome-local"/>
+        <classes>
+            <class name="com.example.selenium.jira.JiraIssueCRUDTest"/>
+        </classes>
+    </test>
+    <test name="Jira Basic CRUD Tests in Firefox">
+        <parameter name="environment" value="firefox-local"/>
+        <classes>
+            <class name="com.example.selenium.jira.JiraIssueCRUDTest"/>
+        </classes>
+    </test>
 </suite>
