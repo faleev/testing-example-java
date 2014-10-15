@@ -1,12 +1,19 @@
 package com.example.selenium.common;
 
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import com.example.utils.ProjectConfiguration;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Reporter;
+
+import java.io.File;
+import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public abstract class Page {
 
@@ -64,5 +71,21 @@ public abstract class Page {
             }
         };
         wait.until(ajaxCompletion);
+    }
+
+    public static void takeScreenshot(WebDriver driver) {
+        // Known issue: ChromeDriver2 take screenshot is not full page
+        // (https://code.google.com/p/chromedriver/issues/detail?id=294)
+        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss");
+        String screenshotsDirictory = ProjectConfiguration.getProperty("screenshots.directory.location") + "/screenshots";
+        new File(screenshotsDirictory).mkdirs();
+        String screenshotFilename = dateFormat.format(new Date()) + ".png";
+        try {
+            FileUtils.copyFile(screenshot, new File(screenshotsDirictory + "/" + screenshotFilename));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Reporter.log("<a href=\"../screenshots/" + screenshotFilename + "\"><img src=\"../screenshots/" + screenshotFilename + "\" alt=\"Screenshot\" width=\"25%\" height=\"25%\">");
     }
 }
