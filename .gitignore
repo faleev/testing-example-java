@@ -11,6 +11,5 @@ log/
 target/
 
 # Selenium Drivers
-drivers/chromedriver*
-drivers/firefox*
-
+selenium-tests/drivers/chromedriver*
+selenium-tests/drivers/firefox*

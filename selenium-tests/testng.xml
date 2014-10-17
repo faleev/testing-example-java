@@ -16,7 +16,7 @@
             <class name="com.example.selenium.wikipedia.WikipediaSearchTest"/>
         </classes>
     </test>
-    <test name="Jira Basic CRUD Tests in Chrome)">
+    <test name="Jira Basic CRUD Tests in Chrome">
         <parameter name="environment" value="chrome-local"/>
         <classes>
             <class name="com.example.selenium.jira.JiraIssueCRUDTest"/>

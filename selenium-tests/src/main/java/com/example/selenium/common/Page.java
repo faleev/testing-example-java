@@ -86,6 +86,6 @@ public abstract class Page {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        Reporter.log("<a href=\"../screenshots/" + screenshotFilename + "\"><img src=\"../screenshots/" + screenshotFilename + "\" alt=\"Screenshot\" width=\"25%\" height=\"25%\">");
+        Reporter.log("<a href=\"./screenshots/" + screenshotFilename + "\"><img src=\"./screenshots/" + screenshotFilename + "\" alt=\"Screenshot\" width=\"25%\" height=\"25%\">");
     }
 }
