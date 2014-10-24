@@ -71,7 +71,7 @@
         <dependency>
             <groupId>ru.yandex.qatools.allure</groupId>
             <artifactId>allure-testng-adaptor</artifactId>
-            <version>LATEST</version>
+            <version>1.4.0</version>
             <exclusions>
                 <exclusion>
                     <artifactId>junit</artifactId>
@@ -141,7 +141,7 @@
             <plugin>
                 <groupId>ru.yandex.qatools.allure</groupId>
                 <artifactId>allure-maven-plugin</artifactId>
-                <version>LATEST</version>
+                <version>2.0</version>
             </plugin>
         </plugins>
     </reporting>
