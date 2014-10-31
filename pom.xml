@@ -7,6 +7,7 @@
     <artifactId>testing-example-java</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <url>https://github.com/faleev/testing-example-java</url>
     <modules>
         <module>unit-tests</module>
         <module>wsdl-tests</module>
@@ -17,6 +18,8 @@
         <reportngTitle>Test Execution Results</reportngTitle>
         <testsuite>testng.xml</testsuite>
         <skipTests>false</skipTests>
+        <aspectj.version>1.7.4</aspectj.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <dependencies>
         <dependency>
@@ -71,7 +74,7 @@
         <dependency>
             <groupId>ru.yandex.qatools.allure</groupId>
             <artifactId>allure-testng-adaptor</artifactId>
-            <version>1.4.0</version>
+            <version>1.4.3</version>
             <exclusions>
                 <exclusion>
                     <artifactId>junit</artifactId>
@@ -108,6 +111,9 @@
                     </properties>
                     <workingDirectory>${project.basedir}</workingDirectory>
                     <reportsDirectory>${project.basedir}/target/reports</reportsDirectory>
+                    <argLine>
+                        -javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar
+                    </argLine>
                 </configuration>
             </plugin>
             <plugin>
@@ -142,6 +148,11 @@
                 <groupId>ru.yandex.qatools.allure</groupId>
                 <artifactId>allure-maven-plugin</artifactId>
                 <version>2.0</version>
+                <configuration>
+                    <reportVersion>1.4.3</reportVersion>
+                    <resultsPattern>**/allure-results</resultsPattern>
+                    <outputDirectory>${project.reporting.outputDirectory}/allure-maven-plugin</outputDirectory>
+                </configuration>
             </plugin>
         </plugins>
     </reporting>
